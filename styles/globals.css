@@ -6,6 +6,17 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+:root {
+  --white: rgb(255, 255, 255);
+  --white10: rgb(248, 248, 248);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -13,6 +24,10 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+button {
+  color: var(--white);
 }
 
 @media (prefers-color-scheme: dark) {
