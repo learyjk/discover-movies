@@ -12,7 +12,7 @@ const Card = (props) => {
     small: styles.smItem,
   };
   const handleOnError = () => {
-    console.error("card image error");
+    console.log("card image error");
     setImgSrc("/static/clifford.webp");
   };
 
@@ -20,7 +20,7 @@ const Card = (props) => {
     <div className={styles.container}>
       <div className={classMap[size]}>
         <Image
-          src={imgUrl}
+          src={imgSrc}
           alt="image"
           layout="fill"
           className={styles.cardImg}
