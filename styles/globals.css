@@ -28,6 +28,7 @@ a {
 
 button {
   color: var(--white);
+  cursor: pointer;
 }
 
 @media (prefers-color-scheme: dark) {
