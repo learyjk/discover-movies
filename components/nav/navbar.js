@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Image from "next/image";
 import { useState } from "react";
 import styles from "./navbar.module.css";
 
@@ -41,6 +42,12 @@ const Navbar = (props) => {
           <div>
             <button className={styles.usernameBtn} onClick={handleShowDropdown}>
               <p className={styles.username}>{username}</p>
+              <Image
+                src="/static/expand.svg"
+                alt="expand"
+                width={24}
+                height={24}
+              />
             </button>
 
             {showDropdown && (
