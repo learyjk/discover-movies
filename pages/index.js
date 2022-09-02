@@ -6,10 +6,15 @@ import Banner from "../components/banner/banner";
 import Navbar from "../components/nav/navbar";
 import Card from "../components/card/card";
 import SectionCards from "../components/card/section-cards";
+
 import { getVideos } from "../lib/videos";
 
-export default function Home() {
+export async function getServerSideProps() {
   const videos = getVideos();
+  return { props: { videos } };
+}
+
+export default function Home({ videos }) {
   //console.log(disneyVideos);
   return (
     <div className={styles.container}>
