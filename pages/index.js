@@ -10,7 +10,7 @@ import SectionCards from "../components/card/section-cards";
 import { getVideos } from "../lib/videos";
 
 export async function getServerSideProps() {
-  const videos = getVideos();
+  const videos = await getVideos();
   return { props: { videos } };
 }
 
