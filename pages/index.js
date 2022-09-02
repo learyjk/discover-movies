@@ -6,19 +6,11 @@ import Banner from "../components/banner/banner";
 import Navbar from "../components/nav/navbar";
 import Card from "../components/card/card";
 import SectionCards from "../components/card/section-cards";
+import { getVideos } from "../lib/videos";
 
 export default function Home() {
-  const disneyVideos = [
-    {
-      imgUrl: "/static/clifford.webp",
-    },
-    {
-      imgUrl: "/static/clifford.webp",
-    },
-    {
-      imgUrl: "/static/clifford.webp",
-    },
-  ];
+  const videos = getVideos();
+  //console.log(disneyVideos);
   return (
     <div className={styles.container}>
       <Head>
@@ -34,9 +26,9 @@ export default function Home() {
       />
 
       <div className={styles.sectionWrapper}>
-        <SectionCards title="Disney" videos={disneyVideos} size="large" />
-        <SectionCards title="Disney" videos={disneyVideos} size="medium" />
-        <SectionCards title="Disney" videos={disneyVideos} size="small" />
+        <SectionCards title="Disney" videos={videos} size="large" />
+        <SectionCards title="Disney" videos={videos} size="medium" />
+        <SectionCards title="Disney" videos={videos} size="small" />
       </div>
     </div>
   );
