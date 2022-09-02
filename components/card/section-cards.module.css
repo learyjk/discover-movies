@@ -9,13 +9,14 @@
   color: var(--white10);
   font-weight: 700;
   font-size: 2rem;
+  margin-top: 1rem;
 }
 
 .cardWrapper {
   display: flex;
-  padding-top: 1.7rem;
+  padding-top: 0.5rem;
   padding-bottom: 1.5rem;
-  margin-top: 1.5rem /* 24px */;
+  margin-top: 0.5rem /* 24px */;
   margin-right: 0.75rem /* 12px */;
   overflow-x: scroll;
   overflow-y: hidden;
