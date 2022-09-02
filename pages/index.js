@@ -13,7 +13,7 @@ export async function getServerSideProps() {
   const disneyVideos = await getVideos(`Disney Trailers`);
   const productivityVideos = await getVideos(`Productivity`);
   const travelVideos = await getVideos(`Travel`);
-  const popularVideos = await getVideos("Popular");
+  const popularVideos = await getVideos();
   return {
     props: { disneyVideos, travelVideos, productivityVideos, popularVideos },
   };
