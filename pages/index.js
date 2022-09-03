@@ -25,7 +25,6 @@ export default function Home({
   productivityVideos,
   popularVideos,
 }) {
-  //console.log(disneyVideos);
   return (
     <div className={styles.container}>
       <Head>
@@ -33,7 +32,7 @@ export default function Home({
         <meta name="movies" content="It's a Netflix clone" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar username="keeganleary" />
+      <Navbar />
       <Banner
         title="Clifford the Red Dog"
         subTitle="A very cute dog"
