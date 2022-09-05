@@ -5,16 +5,36 @@ import clsx from "classnames";
 
 Modal.setAppElement("#__next");
 
-const Video = () => {
-  const router = useRouter();
-
+export async function getStaticProps() {
+  //data to fetch from API
   const video = {
     title: "Hi cute dog",
     publishTime: "1990-01-01",
-    description: "A big red dog that is super cute, can he get any bigger?",
+    description:
+      "A big red dog that is super cute, can he get any bigger? A big red dog that is super cute, can he get any bigger? A big red dog that is super cute, can he get any bigger? A big red dog that is super cute, can he get any bigger? A big red dog that is super cute, can he get any bigger? A big red dog that is super cute, can he get any bigger? A big red dog that is super cute, can he get any bigger? A big red dog that is super cute, can he get any bigger? A big red dog that is super cute, can he get any bigger? A big red dog that is super cute, can he get any bigger? A big red dog that is super cute, can he get any bigger? A big red dog that is super cute, can he get any bigger? A big red dog that is super cute, can he get any bigger? A big red dog that is super cute, can he get any bigger? A big red dog that is super cute, can he get any bigger?",
     channelTitle: "Paramount Pictures",
     viewCount: 10000,
   };
+
+  return {
+    props: {
+      video,
+    },
+    revalidate: 10, // In seconds
+  };
+}
+
+export async function getStaticPaths() {
+  const listOfVideos = ["mYfJxlgR2jw", "4zH5iYM4wJo", "KCPEHsAViiQ"];
+  const paths = listOfVideos.map((id) => ({
+    params: { id },
+  }));
+
+  return { paths, fallback: "blocking" };
+}
+
+const Video = ({ video }) => {
+  const router = useRouter();
 
   const { title, publishTime, description, channelTitle, viewCount } = video;
   return (
