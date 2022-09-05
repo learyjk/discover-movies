@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import styles from "./card.module.css";
@@ -15,6 +15,7 @@ const Card = (props) => {
     medium: styles.mdItem,
     small: styles.smItem,
   };
+
   const handleOnError = () => {
     console.log("card image error");
     setImgSrc(
@@ -28,7 +29,7 @@ const Card = (props) => {
         whileHover={{ scaleY: 1.1, zIndex: 1 }}
         className={classMap[size]}>
         <Image
-          src={imgSrc}
+          src={imgUrl}
           alt="img"
           layout="fill"
           className={styles.cardImg}

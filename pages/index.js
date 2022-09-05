@@ -8,23 +8,27 @@ import Card from "../components/card/card";
 import SectionCards from "../components/card/section-cards";
 
 import { getVideos } from "../lib/videos";
+import videos from "../data/videos.json";
+import disneyVideos from "../data/disneyVideos.json";
 
-export async function getServerSideProps() {
-  const disneyVideos = await getVideos(`Disney Trailers`);
-  const productivityVideos = await getVideos(`Productivity`);
-  const travelVideos = await getVideos(`Travel`);
-  const popularVideos = await getVideos();
-  return {
-    props: { disneyVideos, travelVideos, productivityVideos, popularVideos },
-  };
-}
+// export async function getServerSideProps() {
+//   const disneyVideos = await getVideos(`Disney Trailers`);
+//   const productivityVideos = await getVideos(`Productivity`);
+//   const travelVideos = await getVideos(`Travel`);
+//   const popularVideos = await getVideos();
+//   return {
+//     props: { disneyVideos, travelVideos, productivityVideos, popularVideos },
+//   };
+// }
 
-export default function Home({
-  disneyVideos,
-  travelVideos,
-  productivityVideos,
-  popularVideos,
-}) {
+export default function Home(
+  {
+    // disneyVideos,
+    // travelVideos,
+    // productivityVideos,
+    // popularVideos,
+  }
+) {
   return (
     <div className={styles.container}>
       <Head>
@@ -40,14 +44,14 @@ export default function Home({
       />
 
       <div className={styles.sectionWrapper}>
-        <SectionCards title="Disney" videos={disneyVideos} size="large" />
-        <SectionCards title="Travel" videos={travelVideos} size="small" />
+        <SectionCards title="Disney" videos={disneyVideos.items} size="large" />
+        <SectionCards title="Travel" videos={videos.items} size="small" />
         <SectionCards
           title="Productivity"
-          videos={productivityVideos}
+          videos={videos.items}
           size="medium"
         />
-        <SectionCards title="Popular" videos={popularVideos} size="large" />
+        <SectionCards title="Popular" videos={videos.items} size="large" />
       </div>
     </div>
   );
